@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact · Almond Ember Kitchen</title>
+  <meta name="description" content="Get in touch with Almond Ember Kitchen — recipe questions, collaborations, or just to say hello.">
+  <link rel="canonical" href="https://www.almondemberkitchen.com/contact.html">
+  <meta property="og:title" content="Contact · Almond Ember Kitchen">
+  <meta property="og:description" content="Get in touch with Almond Ember Kitchen — recipe questions, collaborations, or just to say hello.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.almondemberkitchen.com/contact.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=630&fit=crop">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fdfaf7;
+      color: #2e241f;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: #1f1814;
+    }
+    a {
+      color: #b45d2b;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #8c451f;
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    /* ---------- UTILITY ---------- */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .content-width {
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+    }
+    /* ---------- HEADER ---------- */
+    .blog-header {
+      background: #ffffff;
+      border-bottom: 1px solid #ede7e0;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.95);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Georgia', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #1f1814;
+      letter-spacing: -0.02em;
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: #b45d2b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .brand span {
+      color: #b45d2b;
+    }
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      padding: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .main-nav a {
+      color: #3d332c;
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: #b45d2b;
+      border-bottom-color: #b45d2b;
+      text-decoration: none;
+    }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid #ddd2c8;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #3d332c;
+    }
+    /* ---------- SEARCH BAR (HEADER) ---------- */
+    .header-search {
+      display: flex;
+      align-items: center;
+      background: #f6f1ec;
+      border-radius: 40px;
+      padding: 4px 4px 4px 18px;
+      border: 1px solid #e5ddd5;
+    }
+    .header-search input {
+      border: none;
+      background: transparent;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      width: 160px;
+      outline: none;
+      color: #2e241f;
+    }
+    .header-search button {
+      background: #b45d2b;
+      border: none;
+      border-radius: 40px;
+      padding: 8px 16px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .header-search button:hover {
+      background: #8c451f;
+    }
+    /* ---------- PAGE INTRO ---------- */
+    .page-intro {
+      padding: 48px 0 16px;
+      text-align: left;
+    }
+    .page-intro h1 {
+      font-size: 2.8rem;
+      max-width: 700px;
+      margin-bottom: 12px;
+    }
+    .page-intro p {
+      font-size: 1.2rem;
+      color: #5f5349;
+      max-width: 640px;
+    }
+    /* ---------- CONTACT LAYOUT ---------- */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      padding: 24px 0 64px;
+    }
+    /* ---------- CONTACT FORM ---------- */
+    .contact-form-card {
+      background: #ffffff;
+      border: 1px solid #ede7e0;
+      border-radius: 8px;
+      padding: 36px 40px 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    .contact-form-card h2 {
+      font-size: 1.9rem;
+      margin-bottom: 8px;
+    }
+    .contact-form-card .form-subhead {
+      color: #5f5349;
+      font-size: 0.98rem;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ede7e0;
+    }
+    .form-group {
+      margin-bottom: 22px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #3d332c;
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+    .form-group label .required {
+      color: #b45d2b;
+      margin-left: 2px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ddd2c8;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #2e241f;
+      background: #fdfaf7;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #b45d2b;
+      box-shadow: 0 0 0 3px rgba(180, 93, 43, 0.08);
+      background: #ffffff;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.6;
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235f5349' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 24px;
+      font-size: 0.88rem;
+      color: #5f5349;
+      line-height: 1.5;
+    }
+    .form-check input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: #b45d2b;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .form-check a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .btn-submit {
+      background: #b45d2b;
+      border: none;
+      border-radius: 40px;
+      padding: 14px 40px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-submit:hover {
+      background: #8c451f;
+    }
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+    .form-note {
+      font-size: 0.82rem;
+      color: #8a7e74;
+      margin-top: 16px;
+    }
+    /* ---------- CONTACT SIDEBAR ---------- */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .contact-card {
+      background: #ffffff;
+      border: 1px solid #ede7e0;
+      border-radius: 8px;
+      padding: 28px 28px 30px;
+    }
+    .contact-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ede7e0;
+    }
+    .contact-detail {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+    .contact-detail:last-child {
+      margin-bottom: 0;
+    }
+    .contact-detail-icon {
+      width: 40px;
+      height: 40px;
+      background: #f6f1ec;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      color: #b45d2b;
+    }
+    .contact-detail-text {
+      font-size: 0.92rem;
+      color: #3d332c;
+      line-height: 1.55;
+    }
+    .contact-detail-text strong {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #8a7e74;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .contact-detail-text a {
+      font-weight: 500;
+    }
+    /* ---------- SOCIAL LINKS ---------- */
+    .social-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .social-list li a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #3d332c;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: background 0.15s ease, color 0.15s ease;
+      text-decoration: none;
+    }
+    .social-list li a:hover {
+      background: #f6f1ec;
+      color: #b45d2b;
+      text-decoration: none;
+    }
+    .social-icon {
+      width: 28px;
+      height: 28px;
+      background: #f6f1ec;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #b45d2b;
+      flex-shrink: 0;
+    }
+    /* ---------- MAP / LOCATION ---------- */
+    .map-card {
+      background: #ffffff;
+      border: 1px solid #ede7e0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .map-card h3 {
+      font-size: 1.2rem;
+      padding: 24px 28px 12px;
+      margin: 0;
+    }
+    .map-card p {
+      padding: 0 28px 18px;
+      font-size: 0.9rem;
+      color: #5f5349;
+    }
+    .map-embed {
+      width: 100%;
+      height: 220px;
+      background: #e8e2db;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8a7e74;
+      font-size: 0.9rem;
+      border-top: 1px solid #ede7e0;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .map-placeholder-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-align: center;
+      padding: 20px;
+    }
+    .map-placeholder-text span:first-child {
+      font-size: 2rem;
+    }
+    /* ---------- FAQ MINI ---------- */
+    .faq-mini .faq-item {
+      border-bottom: 1px solid #ede7e0;
+      padding: 14px 0;
+    }
+    .faq-mini .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .faq-mini .faq-q {
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      color: #1f1814;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .faq-mini .faq-q span {
+      flex-shrink: 0;
+      color: #b45d2b;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+    .faq-mini .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      color: #5f5349;
+      font-size: 0.9rem;
+      padding-top: 0;
+      line-height: 1.6;
+    }
+    .faq-mini .faq-a.open {
+      max-height: 260px;
+      padding-top: 10px;
+    }
+    /* ---------- FOOTER ---------- */
+    .blog-footer {
+      background: #1f1814;
+      color: #cbc1b8;
+      padding: 56px 0 24px;
+      margin-top: 48px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-grid h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    .footer-grid p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .footer-grid ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .footer-grid a {
+      color: #cbc1b8;
+    }
+    .footer-grid a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid #3d332c;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 1024px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .contact-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .map-card {
+        grid-column: 1 / -1;
+      }
+    }
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .main-nav ul {
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+      }
+      .header-search {
+        width: 100%;
+        padding-left: 14px;
+      }
+      .header-search input {
+        width: 100%;
+      }
+      .mobile-toggle {
+        display: block;
+        align-self: flex-end;
+      }
+      .main-nav {
+        display: none;
+      }
+      .main-nav.open {
+        display: block;
+      }
+      .page-intro h1 {
+        font-size: 2.2rem;
+      }
+      .contact-form-card {
+        padding: 28px 22px 32px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .contact-sidebar {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .btn-submit {
+        width: 100%;
+        justify-content: center;
+      }
+      .contact-form-card {
+        padding: 22px 16px 26px;
+      }
+    }
+    /* ---------- ANIMATIONS ---------- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="blog-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Almond Ember Kitchen home">
+      <span class="brand-icon">🔥</span>
+      Almond <span>Ember Kitchen</span>
+    </a>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="terms.html">Terms Of Privacy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookies Policy</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="categories.html">Categories</a></li>
+      </ul>
+    </nav>
+    <div class="header-search">
+      <input type="text" id="searchInput" placeholder="Search recipes…" aria-label="Search recipes">
+      <button id="searchBtn">Search</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PAGE INTRO ================= -->
+<section class="page-intro container">
+  <h1>Let's talk food.</h1>
+  <p>Whether you have a question about a recipe, a collaboration idea, or just want to share what you cooked — we'd love to hear from you.</p>
+</section>
+
+<!-- ================= CONTACT LAYOUT ================= -->
+<div class="container contact-layout">
+
+  <!-- ===== CONTACT FORM ===== -->
+  <main>
+    <div class="contact-form-card fade-in">
+      <h2>Send a message</h2>
+      <p class="form-subhead">We read every note and usually reply within 2–3 business days.</p>
+
+      <form id="contactForm" action="#" method="POST" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="e.g. Alex Rivera" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="general">General question</option>
+            <option value="recipe-help">Recipe help / troubleshooting</option>
+            <option value="collaboration">Collaboration or partnership</option>
+            <option value="press">Press &amp; media</option>
+            <option value="feedback">Feedback on a post</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your message <span class="required">*</span></label>
+          <textarea id="message" name="message" placeholder="Tell us what's on your mind — the more detail, the better we can help." required></textarea>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent" style="font-weight:400; margin:0; font-size:0.88rem; color:#5f5349;">
+            I agree that Almond Ember Kitchen may store and process my information to respond to this enquiry. See our <a href="privacy.html">Privacy Policy</a>. <span class="required">*</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <span>✉️</span> Send message
+        </button>
+
+        <p class="form-note">* Required fields. We never share your email with third parties.</p>
+      </form>
+    </div>
+
+    <!-- Success message (hidden by default) -->
+    <div id="formSuccess" style="display:none; margin-top:24px; background:#f0f7f0; border:1px solid #c8e0c8; border-radius:8px; padding:24px 28px;" class="fade-in">
+      <h3 style="font-size:1.2rem; color:#2e5e2e; margin-bottom:6px;">✅ Message received</h3>
+      <p style="color:#3d5e3d; font-size:0.95rem; margin:0;">Thank you for reaching out! We'll get back to you within 2–3 business days. In the meantime, why not browse our <a href="index.html">latest recipes</a>?</p>
+    </div>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="contact-sidebar">
+
+    <!-- Contact Details Card -->
+    <div class="contact-card fade-in">
+      <h3>Contact details</h3>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">✉️</div>
+        <div class="contact-detail-text">
+          <strong>Email</strong>
+          <a href="mailto:hello@almondemberkitchen.com">hello@almondemberkitchen.com</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div class="contact-detail-text">
+          <strong>Based in</strong>
+          Portland, Oregon, USA
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🕐</div>
+        <div class="contact-detail-text">
+          <strong>Response time</strong>
+          2–3 business days
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Card -->
+    <div class="contact-card fade-in">
+      <h3>Follow along</h3>
+      <ul class="social-list">
+        <li>
+          <a href="#" aria-label="Instagram">
+            <span class="social-icon">📷</span> Instagram
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Pinterest">
+            <span class="social-icon">📌</span> Pinterest
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="YouTube">
+            <span class="social-icon">▶️</span> YouTube
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Newsletter">
+            <span class="social-icon">📬</span> Newsletter
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Mini FAQ Card -->
+    <div class="contact-card fade-in faq-mini">
+      <h3>Quick answers</h3>
+      <div class="faq-item">
+        <div class="faq-q">Can I republish a recipe? <span>+</span></div>
+        <div class="faq-a">We're happy for you to share a link and a short excerpt, but please don't republish full recipes without written permission. See our <a href="terms.html">Terms</a> for details.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you accept sponsored posts? <span>+</span></div>
+        <div class="faq-a">Occasionally, if the brand is a genuine fit with our kitchen values. Send us an email with "Collaboration" in the subject line and we'll review it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">I'm having trouble with a recipe. <span>+</span></div>
+        <div class="faq-a">Please include the recipe name, your altitude, and any substitutions you made. That helps us troubleshoot much faster.</div>
+      </div>
+    </div>
+
+    <!-- Map Card (placeholder) -->
+    <div class="map-card fade-in">
+      <h3>Find us</h3>
+      <p>We're based in Portland, Oregon — but our recipes travel everywhere.</p>
+      <div class="map-embed">
+        <div class="map-placeholder-text">
+          <span>🗺️</span>
+          <span>Portland, Oregon</span>
+          <span style="font-size:0.8rem; opacity:0.75;">Interactive map placeholder</span>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="blog-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Almond Ember Kitchen</h4>
+        <p>Slow food, bold flavors, and the recipes worth repeating. A journal of deeply tested dishes, technique guides, and kitchen wisdom.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#breakfast">Breakfast</a></li>
+          <li><a href="index.html#dinner">Dinner</a></li>
+          <li><a href="index.html#baking">Baking</a></li>
+          <li><a href="index.html#techniques">Techniques</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="cookies.html">Cookie Policy</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Pinterest</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Almond Ember Kitchen. All rights reserved.</span>
+      <span>Made with fire and patience.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= SCHEMA MARKUP ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Almond Ember Kitchen",
+  "url": "https://www.almondemberkitchen.com/contact.html",
+  "description": "Get in touch with Almond Ember Kitchen — recipe questions, collaborations, or just to say hello.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Almond Ember Kitchen",
+    "email": "hello@almondemberkitchen.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Portland",
+      "addressRegion": "OR",
+      "addressCountry": "US"
+    }
+  }
+}
+</script>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+  // ---- FORM SUBMISSION (demo) ----
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Basic validation
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const consent = document.getElementById('consent').checked;
+
+    if (!name || !email || !message || !consent) {
+      alert('Please fill in all required fields and agree to the privacy policy.');
+      return;
+    }
+    if (!email.includes('@') || !email.includes('.')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    // Hide form, show success
+    contactForm.style.display = 'none';
+    formSuccess.style.display = 'block';
+    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // In a real app, you'd send the data to a server here.
+    // console.log({ name, email, subject: document.getElementById('subject').value, message });
+  });
+
+  // ---- FAQ TOGGLE (mini) ----
+  document.querySelectorAll('.faq-mini .faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      if (answer) answer.classList.toggle('open');
+      const span = q.querySelector('span');
+      if (span) span.textContent = answer.classList.contains('open') ? '−' : '+';
+    });
+  });
+
+  // ---- MOBILE NAV ----
+  document.getElementById('mobileToggle').addEventListener('click', () => {
+    document.getElementById('mainNav').classList.toggle('open');
+  });
+
+  // ---- SEARCH (simple highlight / alert) ----
+  function performSearch() {
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    if (!query) return;
+    // Clear previous highlights
+    document.querySelectorAll('.search-highlight').forEach(el => {
+      const parent = el.parentNode;
+      parent.replaceChild(document.createTextNode(el.textContent), el);
+      parent.normalize();
+    });
+    // Simple alert for demo on contact page
+    alert('Search is available on the main blog page. For now, try browsing our categories.');
+  }
+  document.getElementById('searchBtn').addEventListener('click', performSearch);
+  document.getElementById('searchInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') performSearch();
+  });
+
+  // ---- FADE-IN OBSERVER ----
+  function observeFadeIns() {
+    const els = document.querySelectorAll('.fade-in:not(.visible)');
+    if (!els.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
+  }
+
+  // ---- INIT ----
+  document.addEventListener('DOMContentLoaded', () => {
+    observeFadeIns();
+  });
+</script>
+
+</body>
+</html>

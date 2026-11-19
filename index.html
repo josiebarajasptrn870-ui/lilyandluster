@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Almond Ember Kitchen — Slow Food, Bold Flavors &amp; Everyday Recipes</title>
+  <meta name="description" content="Almond Ember Kitchen is a recipe journal with deeply tested dishes, technique guides, and kitchen wisdom. Explore breakfast, dinner, baking, sauces, and more.">
+  <link rel="canonical" href="https://www.almondemberkitchen.com/">
+  <meta property="og:title" content="Almond Ember Kitchen — Slow Food, Bold Flavors">
+  <meta property="og:description" content="Deeply tested recipes, technique guides, and kitchen wisdom for cooks who care.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.almondemberkitchen.com/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=630&fit=crop">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fdfaf7;
+      color: #2e241f;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: #1f1814;
+    }
+    a {
+      color: #b45d2b;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #8c451f;
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    /* ---------- UTILITY ---------- */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .content-width {
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+    }
+    /* ---------- HEADER ---------- */
+    .blog-header {
+      background: #ffffff;
+      border-bottom: 1px solid #ede7e0;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.95);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Georgia', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #1f1814;
+      letter-spacing: -0.02em;
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: #b45d2b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .brand span {
+      color: #b45d2b;
+    }
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      padding: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .main-nav a {
+      color: #3d332c;
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: #b45d2b;
+      border-bottom-color: #b45d2b;
+      text-decoration: none;
+    }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid #ddd2c8;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #3d332c;
+    }
+    /* ---------- SEARCH BAR (HEADER) ---------- */
+    .header-search {
+      display: flex;
+      align-items: center;
+      background: #f6f1ec;
+      border-radius: 40px;
+      padding: 4px 4px 4px 18px;
+      border: 1px solid #e5ddd5;
+    }
+    .header-search input {
+      border: none;
+      background: transparent;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      width: 160px;
+      outline: none;
+      color: #2e241f;
+    }
+    .header-search button {
+      background: #b45d2b;
+      border: none;
+      border-radius: 40px;
+      padding: 8px 16px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .header-search button:hover {
+      background: #8c451f;
+    }
+    /* ---------- HERO (EDITORIAL, NOT GIANT) ---------- */
+    .editorial-intro {
+      padding: 48px 0 24px;
+      text-align: left;
+    }
+    .editorial-intro h1 {
+      font-size: 2.8rem;
+      max-width: 700px;
+      margin-bottom: 16px;
+    }
+    .editorial-intro p {
+      font-size: 1.2rem;
+      color: #5f5349;
+      max-width: 640px;
+    }
+    /* ---------- GRID LAYOUT ---------- */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 48px;
+      padding: 40px 0 64px;
+    }
+    /* ---------- ARTICLE CARDS ---------- */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #ede7e0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      transform: translateY(-2px);
+    }
+    .card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+    .card-body {
+      padding: 22px 24px 26px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: #b45d2b;
+      margin-bottom: 6px;
+    }
+    .card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #5f5349;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #8a7e74;
+      border-top: 1px solid #ede7e0;
+      padding-top: 14px;
+      margin-top: auto;
+    }
+    .card-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    /* ---------- SECTION TITLES ---------- */
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 48px 0 24px;
+      border-bottom: 1px solid #ede7e0;
+      padding-bottom: 10px;
+    }
+    .section-title h2 {
+      font-size: 1.7rem;
+      font-weight: 500;
+    }
+    .section-title a {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    /* ---------- LIST ARTICLES (SIMPLE) ---------- */
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .list-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #ede7e0;
+    }
+    .list-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .list-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+    .list-item p {
+      font-size: 0.9rem;
+      color: #5f5349;
+      margin-bottom: 6px;
+    }
+    .list-meta {
+      font-size: 0.78rem;
+      color: #8a7e74;
+    }
+    /* ---------- SIDEBAR ---------- */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .sidebar-widget {
+      background: #ffffff;
+      border: 1px solid #ede7e0;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .sidebar-widget h3 {
+      font-size: 1.15rem;
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ede7e0;
+    }
+    .sidebar-widget ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .sidebar-widget li a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #3d332c;
+      display: block;
+      line-height: 1.4;
+    }
+    .sidebar-widget li a:hover {
+      color: #b45d2b;
+      text-decoration: none;
+    }
+    .sidebar-widget .side-meta {
+      font-size: 0.78rem;
+      color: #8a7e74;
+      margin-top: 2px;
+    }
+    .sidebar-about p {
+      font-size: 0.9rem;
+      color: #5f5349;
+    }
+    /* ---------- ARTICLE (LONG FORM) ---------- */
+    .long-article {
+      background: #ffffff;
+      border: 1px solid #ede7e0;
+      border-radius: 8px;
+      padding: 40px 44px;
+      margin-bottom: 48px;
+    }
+    .long-article h2 {
+      font-size: 2rem;
+      margin: 32px 0 16px;
+    }
+    .long-article h3 {
+      font-size: 1.4rem;
+      margin: 28px 0 12px;
+    }
+    .long-article p {
+      margin-bottom: 20px;
+      color: #3d332c;
+    }
+    .long-article ul, .long-article ol {
+      margin-bottom: 20px;
+      color: #3d332c;
+    }
+    .long-article li {
+      margin-bottom: 8px;
+    }
+    .long-article img {
+      margin: 28px 0;
+      border-radius: 6px;
+    }
+    .article-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 0.85rem;
+      color: #8a7e74;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #ede7e0;
+      padding-bottom: 16px;
+    }
+    /* ---------- FAQ ---------- */
+    .faq-item {
+      border-bottom: 1px solid #ede7e0;
+      padding: 16px 0;
+    }
+    .faq-q {
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      color: #1f1814;
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: #5f5349;
+      font-size: 0.95rem;
+      padding-top: 0;
+    }
+    .faq-a.open {
+      max-height: 300px;
+      padding-top: 12px;
+    }
+    /* ---------- NEWSLETTER ---------- */
+    .newsletter {
+      background: #f6f1ec;
+      border: 1px solid #e5ddd5;
+      border-radius: 8px;
+      padding: 40px 36px;
+      text-align: center;
+      margin: 48px 0;
+    }
+    .newsletter h3 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .newsletter p {
+      color: #5f5349;
+      margin-bottom: 20px;
+    }
+    .newsletter input {
+      padding: 12px 18px;
+      border: 1px solid #ddd2c8;
+      border-radius: 40px;
+      width: 280px;
+      max-width: 100%;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .newsletter button {
+      background: #b45d2b;
+      border: none;
+      border-radius: 40px;
+      padding: 12px 28px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 8px;
+      transition: background 0.2s;
+    }
+    .newsletter button:hover {
+      background: #8c451f;
+    }
+    /* ---------- FOOTER ---------- */
+    .blog-footer {
+      background: #1f1814;
+      color: #cbc1b8;
+      padding: 56px 0 24px;
+      margin-top: 48px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-grid h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    .footer-grid p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .footer-grid ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .footer-grid a {
+      color: #cbc1b8;
+    }
+    .footer-grid a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid #3d332c;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    /* ---------- FILTER BUTTONS ---------- */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .filter-btn {
+      background: #fff;
+      border: 1px solid #ddd2c8;
+      border-radius: 40px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: #3d332c;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      background: #f6f1ec;
+    }
+    .filter-btn.active {
+      background: #b45d2b;
+      border-color: #b45d2b;
+      color: #fff;
+    }
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 1024px) {
+      .blog-layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .main-nav ul {
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+      }
+      .header-search {
+        width: 100%;
+        padding-left: 14px;
+      }
+      .header-search input {
+        width: 100%;
+      }
+      .mobile-toggle {
+        display: block;
+        align-self: flex-end;
+      }
+      .main-nav {
+        display: none;
+      }
+      .main-nav.open {
+        display: block;
+      }
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+      .long-article {
+        padding: 28px 20px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+      .editorial-intro h1 {
+        font-size: 2.2rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .list-item {
+        grid-template-columns: 1fr;
+      }
+      .list-item img {
+        width: 100%;
+        height: 160px;
+      }
+      .newsletter input {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .newsletter button {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+    /* ---------- ANIMATIONS ---------- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* ---------- SEARCH HIGHLIGHT ---------- */
+    .search-highlight {
+      background: #fdebd0;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="blog-header">
+  <div class="container header-inner">
+    <a href="#" class="brand" aria-label="Almond Ember Kitchen home">
+      <span class="brand-icon">🔥</span>
+      Almond <span>Ember Kitchen</span>
+    </a>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li> 
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+      </ul>
+    </nav>
+    <div class="header-search">
+      <input type="text" id="searchInput" placeholder="Search recipes…" aria-label="Search recipes">
+      <button id="searchBtn">Search</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= EDITORIAL INTRO ================= -->
+<section class="editorial-intro container">
+  <h1>Slow food, bold flavors, and the recipes worth repeating.</h1>
+  <p>Almond Ember Kitchen is a journal of deeply tested dishes, technique guides, and kitchen wisdom — from weeknight dinners to weekend baking projects.</p>
+</section>
+
+<!-- ================= MAIN BLOG LAYOUT ================= -->
+<div class="container blog-layout">
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="breakfast">Breakfast</button>
+      <button class="filter-btn" data-category="dinner">Dinner</button>
+      <button class="filter-btn" data-category="baking">Baking</button>
+      <button class="filter-btn" data-category="vegetarian">Vegetarian</button>
+      <button class="filter-btn" data-category="techniques">Techniques</button>
+      <button class="filter-btn" data-category="desserts">Desserts</button>
+    </div>
+
+    <!-- Featured Articles -->
+    <section id="featured">
+      <div class="section-title">
+        <h2>Featured</h2>
+        <a href="#">View all →</a>
+      </div>
+      <div class="featured-grid" id="featuredGrid">
+        <!-- Dynamically filled by JS to allow filtering, but static fallback -->
+      </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section id="latest">
+      <div class="section-title">
+        <h2>Latest Articles</h2>
+        <a href="#">View all →</a>
+      </div>
+      <div class="article-list" id="latestList">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <!-- Popular / Long-form snippet -->
+    <section id="popular">
+      <div class="section-title">
+        <h2>Popular This Week</h2>
+        <a href="#">View all →</a>
+      </div>
+      <div class="article-list" id="popularList">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <!-- Long-form Article 1 -->
+    <article class="long-article fade-in" id="article1">
+      <div class="article-meta">
+        <span>📅 March 12, 2025</span>
+        <span>⏱ 12 min read</span>
+        <span>🍽 Dinner</span>
+      </div>
+      <h2>The Art of Slow-Braised Short Ribs: A Complete Guide</h2>
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=500&fit=crop" alt="Slow-braised short ribs with rich gravy and herbs">
+      <p>There are few dishes as deeply satisfying as properly braised short ribs. The meat surrenders to the fork, the sauce clings to every grain of polenta, and the kitchen fills with an aroma that promises comfort. But behind that simplicity lies a series of decisions — searing, deglazing, liquid ratios, and time — that separate a good braise from an unforgettable one.</p>
+      <h3>Why Short Ribs?</h3>
+      <p>Short ribs come from the beef chuck, a heavily exercised muscle rich in connective tissue. That tissue, collagen, melts into gelatin during a long, slow cook, giving the meat its signature silkiness and the sauce its body. The bone adds depth. It is, quite simply, the ideal cut for braising.</p>
+      <h3>The Sear Matters More Than You Think</h3>
+      <p>Pat the ribs completely dry. Season generously with salt and pepper. Sear in a heavy Dutch oven over medium-high heat until deeply browned on all sides. This is not about cooking the meat through — it is about building flavor. Those browned bits on the bottom of the pot are the foundation of your sauce.</p>
+      <h3>The Liquid Equation</h3>
+      <p>You want enough liquid to come about two-thirds up the sides of the ribs, but not to submerge them. A good rule: one cup of red wine, two cups of beef stock, and one cup of crushed tomatoes for every three pounds of ribs. The wine should be drinkable — if you wouldn't sip it, don't cook with it.</p>
+      <h3>Low and Slow</h3>
+      <p>Cover the pot and transfer to a 325°F oven. Cook for 2.5 to 3 hours, until the meat is tender but not falling apart. Check at the 2-hour mark. The ribs should offer no resistance to a fork, but still hold their shape.</p>
+      <h3>Common Mistakes</h3>
+      <ul>
+        <li><strong>Skipping the sear:</strong> You lose the Maillard reaction and the sauce tastes flat.</li>
+        <li><strong>Boiling instead of simmering:</strong> High heat toughens meat. Keep it gentle.</li>
+        <li><strong>Not deglazing:</strong> All those browned bits are flavor. Loosen them with wine or stock.</li>
+        <li><strong>Under-salting:</strong> Braises need aggressive seasoning at every stage.</li>
+      </ul>
+      <h3>FAQ</h3>
+      <div class="faq-item">
+        <div class="faq-q">Can I make this in a slow cooker? <span>+</span></div>
+        <div class="faq-a">Yes. Sear the ribs first, then transfer everything to a slow cooker and cook on low for 7–8 hours. Reduce the sauce on the stovetop afterward.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What do I serve with short ribs? <span>+</span></div>
+        <div class="faq-a">Creamy polenta, mashed potatoes, buttered egg noodles, or a crusty loaf of bread to soak up the sauce.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I make it ahead? <span>+</span></div>
+        <div class="faq-a">Absolutely. In fact, it tastes better the next day. Cool and refrigerate in the braising liquid for up to 3 days. The fat will solidify on top and can be removed easily.</div>
+      </div>
+      <p><strong>Related:</strong> <a href="#">The Complete Guide to Braising</a> · <a href="#">Building Flavor with Umami</a></p>
+    </article>
+
+    <!-- Long-form Article 2 -->
+    <article class="long-article fade-in" id="article2">
+      <div class="article-meta">
+        <span>📅 March 8, 2025</span>
+        <span>⏱ 9 min read</span>
+        <span>🍞 Baking</span>
+      </div>
+      <h2>Mastering Sourdough: A Patient Baker's Handbook</h2>
+      <img src="https://images.unsplash.com/photo-1585478259715-876acc5be8eb?w=800&h=500&fit=crop" alt="Rustic sourdough loaf with scored crust on a wooden board">
+      <p>Sourdough is not a recipe. It is a relationship. Between you and a jar of flour and water, between time and temperature, between gluten and gas. This handbook covers the essential principles that turn a sticky, unpredictable dough into a loaf with an open crumb and a crackling crust.</p>
+      <h3>Start with a Healthy Starter</h3>
+      <p>Your starter should double in size within 4–6 hours of feeding, smell pleasantly sour (not acetone-like), and be full of bubbles. If it's sluggish, feed it twice a day for a few days before baking.</p>
+      <h3>The Autolyse</h3>
+      <p>Mix flour and water and let it rest for 30–60 minutes before adding starter and salt. This hydrates the flour and begins gluten development without any kneading. It's a quiet step that pays off in extensibility.</p>
+      <h3>Bulk Fermentation</h3>
+      <p>This is where flavor develops. Keep the dough between 75–78°F for consistent results. Perform stretch-and-folds every 30 minutes for the first 2 hours. The dough is ready when it's jiggly, slightly domed, and has visible bubbles on the surface. Depending on your kitchen, this could take 4–6 hours.</p>
+      <h3>Shaping and Cold Retard</h3>
+      <p>Shape the dough into a tight round or batard. Place in a floured banneton, cover, and refrigerate overnight (12–16 hours). This cold retard slows fermentation, deepens flavor, and makes the dough easier to score.</p>
+      <h3>Baking</h3>
+      <p>Preheat your Dutch oven to 500°F for at least 45 minutes. Score the cold dough, lower it into the pot, cover, and bake for 20 minutes. Remove the lid, reduce heat to 450°F, and bake another 20–25 minutes until deep brown.</p>
+      <h3>Common Mistakes</h3>
+      <ul>
+        <li><strong>Using a weak starter:</strong> Your bread will not rise. Fix the starter first.</li>
+        <li><strong>Over-proofing:</strong> The dough will collapse when scored and taste sour in an unpleasant way.</li>
+        <li><strong>Under-baking:</strong> A pale crust means a gummy interior. Bake until it's dark.</li>
+      </ul>
+      <h3>FAQ</h3>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a Dutch oven? <span>+</span></div>
+        <div class="faq-a">It helps create steam, but you can also bake on a preheated stone with a tray of boiling water underneath.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Why is my crumb dense? <span>+</span></div>
+        <div class="faq-a">Usually under-fermentation or insufficient gluten development. Extend bulk fermentation and do more stretch-and-folds.</div>
+      </div>
+      <p><strong>Related:</strong> <a href="#">Whole Wheat Sourdough Variations</a> · <a href="#">Troubleshooting Bread Baking</a></p>
+    </article>
+
+    <!-- Long-form Article 3 -->
+    <article class="long-article fade-in" id="article3">
+      <div class="article-meta">
+        <span>📅 March 3, 2025</span>
+        <span>⏱ 7 min read</span>
+        <span>🌿 Vegetarian</span>
+      </div>
+      <h2>Umami for Vegetarians: Building Deep Flavor Without Meat</h2>
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=500&fit=crop" alt="Colorful vegetarian bowl with roasted vegetables and grains">
+      <p>Umami is the fifth taste — savory, brothy, mouth-filling. It's abundant in meat, but vegetarians can achieve the same depth with a pantry of powerful ingredients. This guide shows you how to layer umami in everyday cooking.</p>
+      <h3>The Umami Pantry</h3>
+      <ul>
+        <li><strong>Dried mushrooms:</strong> Soak and use the liquid. Shiitake and porcini are stars.</li>
+        <li><strong>Miso:</strong> White for subtle sweetness, red for bold intensity.</li>
+        <li><strong>Soy sauce or tamari:</strong> A splash transforms sauces and marinades.</li>
+        <li><strong>Tomato paste:</strong> Cook it out until it darkens for a concentrated hit.</li>
+        <li><strong>Nutritional yeast:</strong> Cheesy, savory, perfect for sprinkling.</li>
+        <li><strong>Seaweed:</strong> Kombu adds a clean, oceanic umami to broths.</li>
+        <li><strong>Fermented black beans:</strong> A little goes a long way.</li>
+      </ul>
+      <h3>Layering Technique</h3>
+      <p>Don't rely on a single source. Build flavor in stages: sauté aromatics, add tomato paste and cook until brick-colored, deglaze with soy or tamari, then simmer with mushroom stock. Finish with a drizzle of toasted sesame oil or a spoon of miso dissolved in warm water.</p>
+      <h3>Everyday Applications</h3>
+      <ul>
+        <li><strong>Soups:</strong> Add kombu to the pot while simmering, remove before serving.</li>
+        <li><strong>Stir-fries:</strong> Splash soy sauce at the end for brightness.</li>
+        <li><strong>Burgers:</strong> Mix sautéed mushrooms and miso into the patty mix.</li>
+        <li><strong>Gravies:</strong> Use mushroom stock and a bit of soy sauce for color and depth.</li>
+      </ul>
+      <h3>FAQ</h3>
+      <div class="faq-item">
+        <div class="faq-q">Is miso always vegetarian? <span>+</span></div>
+        <div class="faq-a">Not always. Some miso is made with dashi that contains bonito. Look for miso labeled "vegetarian" or made with only soybeans and rice.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How much soy sauce is too much? <span>+</span></div>
+        <div class="faq-a">Start with a teaspoon and taste. It's easy to add more, but hard to fix an overly salty dish.</div>
+      </div>
+      <p><strong>Related:</strong> <a href="#">Mushroom Broth from Scraps</a> · <a href="#">The Vegetarian Umami Bowl</a></p>
+    </article>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="margin: 48px 0;">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is Almond Ember Kitchen? <span>+</span></div>
+        <div class="faq-a">Almond Ember Kitchen is a recipe journal focused on deeply tested, approachable dishes with an emphasis on technique and flavor. We publish new recipes and guides every week.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Are your recipes suitable for beginners? <span>+</span></div>
+        <div class="faq-a">Yes. We write for all levels. Each recipe includes detailed steps, common mistakes, and tips for success. Our technique guides are designed to build confidence.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you have vegetarian and vegan options? <span>+</span></div>
+        <div class="faq-a">Absolutely. We have a growing collection of vegetarian and vegan recipes, and many of our dishes can be adapted.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I republish your recipes? <span>+</span></div>
+        <div class="faq-a">Please don't republish full recipes without permission. You are welcome to share a link and a short excerpt. See our Terms for details.</div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="newsletter" id="newsletter">
+      <h3>The Sunday Ember</h3>
+      <p>One email a week. Our best recipe, a technique tip, and something to cook this weekend.</p>
+      <form id="newsletterForm" onsubmit="event.preventDefault(); alert('Thanks for subscribing! (Demo)');">
+        <input type="email" placeholder="Your email address" required aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+
+    <!-- About Widget -->
+    <div class="sidebar-widget sidebar-about" id="about">
+      <h3>About the Kitchen</h3>
+      <p>Almond Ember Kitchen is written by <strong>Maya Chen</strong>, a recipe developer and former line cook. Every recipe is tested at least three times in a home kitchen before it's published.</p>
+      <p style="margin-top:12px; font-size:0.85rem;">📍 Portland, Oregon<br>✉️ hello@almondemberkitchen.com</p>
+    </div>
+
+    <!-- Popular Widget -->
+    <div class="sidebar-widget">
+      <h3>Most Popular</h3>
+      <ul id="sidebarPopular">
+        <!-- Filled by JS -->
+      </ul>
+    </div>
+
+    <!-- Recent Widget -->
+    <div class="sidebar-widget">
+      <h3>Recent Posts</h3>
+      <ul id="sidebarRecent">
+        <!-- Filled by JS -->
+      </ul>
+    </div>
+
+    <!-- Categories Widget -->
+    <div class="sidebar-widget">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#breakfast">Breakfast (12)</a></li>
+        <li><a href="#dinner">Dinner (18)</a></li>
+        <li><a href="#baking">Baking (15)</a></li>
+        <li><a href="#vegetarian">Vegetarian (10)</a></li>
+        <li><a href="#techniques">Techniques (8)</a></li>
+        <li><a href="#desserts">Desserts (9)</a></li>
+      </ul>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="blog-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Almond Ember Kitchen</h4>
+        <p>Slow food, bold flavors, and the recipes worth repeating. A journal of deeply tested dishes, technique guides, and kitchen wisdom.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#breakfast">Breakfast</a></li>
+          <li><a href="#dinner">Dinner</a></li>
+          <li><a href="#baking">Baking</a></li>
+          <li><a href="#techniques">Techniques</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms</a></li>
+          <li><a href="#cookies">Cookie Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Pinterest</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Almond Ember Kitchen. All rights reserved.</span>
+      <span>Made with fire and patience.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= SCHEMA MARKUP ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Almond Ember Kitchen",
+  "url": "https://www.almondemberkitchen.com",
+  "description": "Slow food, bold flavors, and the recipes worth repeating.",
+  "author": {
+    "@type": "Person",
+    "name": "Maya Chen"
+  }
+}
+</script>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+  // ---- DATA ----
+  const articles = [
+    {
+      id: 1,
+      title: "The Art of Slow-Braised Short Ribs: A Complete Guide",
+      excerpt: "There are few dishes as deeply satisfying as properly braised short ribs. Learn the sear, the liquid ratio, and the low-and-slow method.",
+      category: "dinner",
+      categoryLabel: "Dinner",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop",
+      alt: "Slow-braised short ribs with rich gravy and herbs",
+      readTime: "12 min read",
+      date: "March 12, 2025"
+    },
+    {
+      id: 2,
+      title: "Mastering Sourdough: A Patient Baker's Handbook",
+      excerpt: "Sourdough is not a recipe. It is a relationship. This handbook covers the essential principles for an open crumb and crackling crust.",
+      category: "baking",
+      categoryLabel: "Baking",
+      image: "https://images.unsplash.com/photo-1585478259715-876acc5be8eb?w=600&h=400&fit=crop",
+      alt: "Rustic sourdough loaf with scored crust on a wooden board",
+      readTime: "9 min read",
+      date: "March 8, 2025"
+    },
+    {
+      id: 3,
+      title: "Umami for Vegetarians: Building Deep Flavor Without Meat",
+      excerpt: "Umami is abundant in meat, but vegetarians can achieve the same depth with a pantry of powerful ingredients.",
+      category: "vegetarian",
+      categoryLabel: "Vegetarian",
+      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop",
+      alt: "Colorful vegetarian bowl with roasted vegetables and grains",
+      readTime: "7 min read",
+      date: "March 3, 2025"
+    },
+    {
+      id: 4,
+      title: "Weeknight Miso Butter Pasta with Spring Vegetables",
+      excerpt: "A 20-minute pasta that tastes like you spent hours. Miso butter, snap peas, and a shower of parmesan.",
+      category: "dinner",
+      categoryLabel: "Dinner",
+      image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&h=400&fit=crop",
+      alt: "Creamy miso butter pasta with green vegetables",
+      readTime: "6 min read",
+      date: "Feb 28, 2025"
+    },
+    {
+      id: 5,
+      title: "The Perfect Fluffy Buttermilk Pancakes",
+      excerpt: "Tall, tender, and just tangy enough. Our test-kitchen formula for pancakes that rise beautifully every time.",
+      category: "breakfast",
+      categoryLabel: "Breakfast",
+      image: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=400&fit=crop",
+      alt: "Stack of fluffy pancakes with maple syrup",
+      readTime: "8 min read",
+      date: "Feb 24, 2025"
+    },
+    {
+      id: 6,
+      title: "How to Make Brown Butter (and Why You Should)",
+      excerpt: "Brown butter is liquid gold. Learn the process, the smell cues, and 10 ways to use it in sweet and savory cooking.",
+      category: "techniques",
+      categoryLabel: "Techniques",
+      image: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=600&h=400&fit=crop",
+      alt: "Brown butter in a stainless steel pan",
+      readTime: "5 min read",
+      date: "Feb 20, 2025"
+    },
+    {
+      id: 7,
+      title: "Dark Chocolate Olive Oil Cake",
+      excerpt: "Fudgy, intensely chocolatey, and made in one bowl. Olive oil keeps it moist for days.",
+      category: "desserts",
+      categoryLabel: "Desserts",
+      image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&h=400&fit=crop",
+      alt: "Slice of dark chocolate olive oil cake on a plate",
+      readTime: "7 min read",
+      date: "Feb 15, 2025"
+    },
+    {
+      id: 8,
+      title: "Crispy Smashed Potatoes with Garlic Aioli",
+      excerpt: "Boiled, smashed, roasted until shatteringly crisp. The garlic aioli is non-negotiable.",
+      category: "vegetarian",
+      categoryLabel: "Vegetarian",
+      image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop",
+      alt: "Crispy smashed potatoes with herbs and dip",
+      readTime: "6 min read",
+      date: "Feb 11, 2025"
+    },
+    {
+      id: 9,
+      title: "The Only Vinaigrette Formula You Need",
+      excerpt: "Master the 3:1 ratio and then improvise forever. A technique guide with 6 variations.",
+      category: "techniques",
+      categoryLabel: "Techniques",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop",
+      alt: "Whisked vinaigrette in a glass bowl with fresh herbs",
+      readTime: "5 min read",
+      date: "Feb 6, 2025"
+    },
+    {
+      id: 10,
+      title: "Lemon Blueberry Scones with Crème Fraîche",
+      excerpt: "Buttery, flaky, and bursting with berries. The secret is frozen butter and a hot oven.",
+      category: "baking",
+      categoryLabel: "Baking",
+      image: "https://images.unsplash.com/photo-1598214886806-c87b84b7078b?w=600&h=400&fit=crop",
+      alt: "Lemon blueberry scones on a baking tray",
+      readTime: "8 min read",
+      date: "Feb 2, 2025"
+    }
+  ];
+
+  // ---- RENDER FEATURED (first 2) ----
+  function renderFeatured(filterCategory = 'all') {
+    const grid = document.getElementById('featuredGrid');
+    let filtered = filterCategory === 'all' ? articles : articles.filter(a => a.category === filterCategory);
+    if (filtered.length === 0) {
+      grid.innerHTML = '<p style="color:#8a7e74; grid-column:1/-1;">No featured articles in this category.</p>';
+      return;
+    }
+    // Take first 2 (or 1 if only one)
+    const featured = filtered.slice(0, 2);
+    grid.innerHTML = featured.map(article => `
+      <article class="card fade-in">
+        <img class="card-img" src="${article.image}" alt="${article.alt}" loading="lazy">
+        <div class="card-body">
+          <div class="card-category">${article.categoryLabel}</div>
+          <h3><a href="#article1" style="color:#1f1814; text-decoration:none;">${article.title}</a></h3>
+          <p>${article.excerpt}</p>
+          <div class="card-meta">
+            <span>📅 ${article.date}</span>
+            <span>⏱ ${article.readTime}</span>
+          </div>
+        </div>
+      </article>
+    `).join('');
+    observeFadeIns();
+  }
+
+  // ---- RENDER LATEST (all except first 2) ----
+  function renderLatest(filterCategory = 'all') {
+    const list = document.getElementById('latestList');
+    let filtered = filterCategory === 'all' ? articles : articles.filter(a => a.category === filterCategory);
+    // Use items from index 2 onward as "latest"
+    let latest = filtered.slice(2);
+    if (latest.length === 0) {
+      latest = filtered; // fallback
+    }
+    if (latest.length === 0) {
+      list.innerHTML = '<p style="color:#8a7e74;">No articles found.</p>';
+      return;
+    }
+    list.innerHTML = latest.map(article => `
+      <div class="list-item fade-in">
+        <img src="${article.image}" alt="${article.alt}" loading="lazy">
+        <div>
+          <div class="card-category" style="margin-bottom:2px;">${article.categoryLabel}</div>
+          <h3><a href="#article1" style="color:#1f1814; text-decoration:none;">${article.title}</a></h3>
+          <p>${article.excerpt}</p>
+          <div class="list-meta">📅 ${article.date} · ⏱ ${article.readTime}</div>
+        </div>
+      </div>
+    `).join('');
+    observeFadeIns();
+  }
+
+  // ---- RENDER POPULAR (items 3-7) ----
+  function renderPopular(filterCategory = 'all') {
+    const list = document.getElementById('popularList');
+    let filtered = filterCategory === 'all' ? articles : articles.filter(a => a.category === filterCategory);
+    let popular = filtered.slice(2, 7);
+    if (popular.length === 0) popular = filtered.slice(0, 5);
+    if (popular.length === 0) {
+      list.innerHTML = '<p style="color:#8a7e74;">No popular articles.</p>';
+      return;
+    }
+    list.innerHTML = popular.map(article => `
+      <div class="list-item fade-in">
+        <img src="${article.image}" alt="${article.alt}" loading="lazy">
+        <div>
+          <div class="card-category" style="margin-bottom:2px;">${article.categoryLabel}</div>
+          <h3><a href="#article1" style="color:#1f1814; text-decoration:none;">${article.title}</a></h3>
+          <p>${article.excerpt}</p>
+          <div class="list-meta">📅 ${article.date} · ⏱ ${article.readTime}</div>
+        </div>
+      </div>
+    `).join('');
+    observeFadeIns();
+  }
+
+  // ---- SIDEBAR ----
+  function renderSidebar() {
+    const popularUl = document.getElementById('sidebarPopular');
+    const recentUl = document.getElementById('sidebarRecent');
+    // Popular: take 5
+    popularUl.innerHTML = articles.slice(0, 5).map(a => `
+      <li>
+        <a href="#article1">${a.title}</a>
+        <div class="side-meta">${a.categoryLabel} · ${a.readTime}</div>
+      </li>
+    `).join('');
+    // Recent: last 5
+    recentUl.innerHTML = articles.slice(-5).reverse().map(a => `
+      <li>
+        <a href="#article1">${a.title}</a>
+        <div class="side-meta">${a.date}</div>
+      </li>
+    `).join('');
+  }
+
+  // ---- FILTERING ----
+  function applyFilter(category) {
+    renderFeatured(category);
+    renderLatest(category);
+    renderPopular(category);
+    // update button active state
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.category === category);
+    });
+  }
+
+  document.getElementById('filterBar').addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    applyFilter(btn.dataset.category);
+  });
+
+  // ---- SEARCH (simple highlight / alert) ----
+  function performSearch() {
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    if (!query) return;
+    // Clear previous highlights
+    document.querySelectorAll('.search-highlight').forEach(el => {
+      const parent = el.parentNode;
+      parent.replaceChild(document.createTextNode(el.textContent), el);
+      parent.normalize();
+    });
+    // Find text nodes in article titles and excerpts
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: function(node) {
+          if (node.parentNode.tagName === 'SCRIPT' || node.parentNode.tagName === 'STYLE') return NodeFilter.FILTER_REJECT;
+          if (node.textContent.toLowerCase().includes(query)) return NodeFilter.FILTER_ACCEPT;
+          return NodeFilter.FILTER_REJECT;
+        }
+      }
+    );
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    let found = false;
+    nodes.forEach(node => {
+      const text = node.textContent;
+      const lower = text.toLowerCase();
+      const index = lower.indexOf(query);
+      if (index === -1) return;
+      found = true;
+      const span = document.createElement('span');
+      span.className = 'search-highlight';
+      span.textContent = text.substring(index, index + query.length);
+      const after = node.splitText(index);
+      after.textContent = after.textContent.substring(query.length);
+      node.parentNode.insertBefore(span, after);
+    });
+    if (!found) {
+      alert('No matches found for "' + query + '".');
+    } else {
+      // Scroll to first highlight
+      const first = document.querySelector('.search-highlight');
+      if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  document.getElementById('searchBtn').addEventListener('click', performSearch);
+  document.getElementById('searchInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') performSearch();
+  });
+
+  // ---- FAQ TOGGLE ----
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      if (answer) answer.classList.toggle('open');
+      const span = q.querySelector('span');
+      if (span) span.textContent = answer.classList.contains('open') ? '−' : '+';
+    });
+  });
+
+  // ---- MOBILE NAV ----
+  document.getElementById('mobileToggle').addEventListener('click', () => {
+    document.getElementById('mainNav').classList.toggle('open');
+  });
+
+  // ---- FADE-IN OBSERVER ----
+  function observeFadeIns() {
+    const els = document.querySelectorAll('.fade-in:not(.visible)');
+    if (!els.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
+  }
+
+  // ---- INIT ----
+  document.addEventListener('DOMContentLoaded', () => {
+    renderFeatured();
+    renderLatest();
+    renderPopular();
+    renderSidebar();
+    observeFadeIns();
+  });
+</script>
+
+</body>
+</html>

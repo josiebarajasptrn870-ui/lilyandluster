@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Almond Ember Kitchen</title>
+  <meta name="description" content="Learn about Almond Ember Kitchen — a recipe journal by Maya Chen, dedicated to slow food, bold flavors, and deeply tested recipes.">
+  <link rel="canonical" href="https://www.almondemberkitchen.com/about.html">
+  <meta property="og:title" content="About Almond Ember Kitchen">
+  <meta property="og:description" content="Slow food, bold flavors, and the recipes worth repeating. Meet the kitchen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.almondemberkitchen.com/about.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&h=630&fit=crop">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    /* ---------- RESET & BASE (consistent with homepage) ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fdfaf7;
+      color: #2e241f;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: #1f1814;
+    }
+    a {
+      color: #b45d2b;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #8c451f;
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    /* ---------- UTILITY ---------- */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .content-width {
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* ---------- HEADER (exact copy) ---------- */
+    .blog-header {
+      background: #ffffff;
+      border-bottom: 1px solid #ede7e0;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.95);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Georgia', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #1f1814;
+      letter-spacing: -0.02em;
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: #b45d2b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .brand span {
+      color: #b45d2b;
+    }
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      padding: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .main-nav a {
+      color: #3d332c;
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: #b45d2b;
+      border-bottom-color: #b45d2b;
+      text-decoration: none;
+    }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid #ddd2c8;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #3d332c;
+    }
+    .header-search {
+      display: flex;
+      align-items: center;
+      background: #f6f1ec;
+      border-radius: 40px;
+      padding: 4px 4px 4px 18px;
+      border: 1px solid #e5ddd5;
+    }
+    .header-search input {
+      border: none;
+      background: transparent;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      width: 160px;
+      outline: none;
+      color: #2e241f;
+    }
+    .header-search button {
+      background: #b45d2b;
+      border: none;
+      border-radius: 40px;
+      padding: 8px 16px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .header-search button:hover {
+      background: #8c451f;
+    }
+    /* ---------- PAGE INTRO ---------- */
+    .page-intro {
+      padding: 48px 0 24px;
+      text-align: left;
+    }
+    .page-intro h1 {
+      font-size: 3rem;
+      max-width: 800px;
+      margin-bottom: 16px;
+    }
+    .page-intro p {
+      font-size: 1.2rem;
+      color: #5f5349;
+      max-width: 680px;
+    }
+    /* ---------- ABOUT LAYOUT ---------- */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 48px;
+      padding: 32px 0 64px;
+    }
+    /* ---------- ARTICLE / ABOUT CONTENT ---------- */
+    .about-card {
+      background: #ffffff;
+      border: 1px solid #ede7e0;
+      border-radius: 8px;
+      padding: 40px 44px;
+      margin-bottom: 32px;
+    }
+    .about-card h2 {
+      font-size: 1.9rem;
+      margin: 28px 0 16px;
+    }
+    .about-card h2:first-of-type {
+      margin-top: 0;
+    }
+    .about-card h3 {
+      font-size: 1.3rem;
+      margin: 24px 0 10px;
+    }
+    .about-card p {
+      margin-bottom: 18px;
+      color: #3d332c;
+    }
+    .about-card ul, .about-card ol {
+      margin-bottom: 18px;
+      color: #3d332c;
+    }
+    .about-card li {
+      margin-bottom: 6px;
+    }
+    .about-card img {
+      margin: 24px 0;
+      border-radius: 6px;
+    }
+    .about-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 0.85rem;
+      color: #8a7e74;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #ede7e0;
+      padding-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    /* ---------- SIDEBAR (same as homepage) ---------- */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .sidebar-widget {
+      background: #ffffff;
+      border: 1px solid #ede7e0;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .sidebar-widget h3 {
+      font-size: 1.15rem;
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ede7e0;
+    }
+    .sidebar-widget ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .sidebar-widget li a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #3d332c;
+      display: block;
+      line-height: 1.4;
+    }
+    .sidebar-widget li a:hover {
+      color: #b45d2b;
+      text-decoration: none;
+    }
+    .sidebar-widget .side-meta {
+      font-size: 0.78rem;
+      color: #8a7e74;
+      margin-top: 2px;
+    }
+    .sidebar-about p {
+      font-size: 0.9rem;
+      color: #5f5349;
+    }
+    /* ---------- TEAM / QUOTE ---------- */
+    .quote-block {
+      background: #f6f1ec;
+      border-left: 4px solid #b45d2b;
+      padding: 24px 28px;
+      border-radius: 0 8px 8px 0;
+      margin: 28px 0;
+      font-style: italic;
+      color: #3d332c;
+    }
+    .quote-block p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+    }
+    .quote-block cite {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      font-style: normal;
+      color: #8a7e74;
+    }
+    /* ---------- VALUES GRID ---------- */
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0 8px;
+    }
+    .value-item {
+      background: #fdfaf7;
+      border: 1px solid #ede7e0;
+      border-radius: 6px;
+      padding: 18px 20px;
+    }
+    .value-item h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: #1f1814;
+    }
+    .value-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: #5f5349;
+    }
+    /* ---------- NEWSLETTER (reuse) ---------- */
+    .newsletter {
+      background: #f6f1ec;
+      border: 1px solid #e5ddd5;
+      border-radius: 8px;
+      padding: 40px 36px;
+      text-align: center;
+      margin: 48px 0;
+    }
+    .newsletter h3 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .newsletter p {
+      color: #5f5349;
+      margin-bottom: 20px;
+    }
+    .newsletter input {
+      padding: 12px 18px;
+      border: 1px solid #ddd2c8;
+      border-radius: 40px;
+      width: 280px;
+      max-width: 100%;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .newsletter button {
+      background: #b45d2b;
+      border: none;
+      border-radius: 40px;
+      padding: 12px 28px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 8px;
+      transition: background 0.2s;
+    }
+    .newsletter button:hover {
+      background: #8c451f;
+    }
+    /* ---------- FOOTER (exact copy) ---------- */
+    .blog-footer {
+      background: #1f1814;
+      color: #cbc1b8;
+      padding: 56px 0 24px;
+      margin-top: 48px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-grid h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    .footer-grid p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .footer-grid ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .footer-grid a {
+      color: #cbc1b8;
+    }
+    .footer-grid a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid #3d332c;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 1024px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .main-nav ul {
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+      }
+      .header-search {
+        width: 100%;
+        padding-left: 14px;
+      }
+      .header-search input {
+        width: 100%;
+      }
+      .mobile-toggle {
+        display: block;
+        align-self: flex-end;
+      }
+      .main-nav {
+        display: none;
+      }
+      .main-nav.open {
+        display: block;
+      }
+      .about-card {
+        padding: 28px 20px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+      .page-intro h1 {
+        font-size: 2.2rem;
+      }
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .newsletter input {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .newsletter button {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+    /* ---------- ANIMATIONS ---------- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="blog-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Almond Ember Kitchen home">
+      <span class="brand-icon">🔥</span>
+      Almond <span>Ember Kitchen</span>
+    </a>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="terms.html">Terms Of Privacy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookies Policy</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="categories.html">Categories</a></li>
+      </ul>
+    </nav>
+    <div class="header-search">
+      <input type="text" id="searchInput" placeholder="Search recipes…" aria-label="Search recipes">
+      <button id="searchBtn">Search</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PAGE INTRO ================= -->
+<section class="page-intro container">
+  <h1>About Almond Ember Kitchen</h1>
+  <p>Slow food, bold flavors, and the recipes worth repeating. This is a journal of deeply tested dishes, technique guides, and kitchen wisdom — written for cooks who care.</p>
+</section>
+
+<!-- ================= ABOUT LAYOUT ================= -->
+<div class="container about-layout">
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+
+    <!-- About Card: Story -->
+    <article class="about-card fade-in">
+      <div class="about-meta">
+        <span>📅 Established 2019</span>
+        <span>📍 Portland, Oregon</span>
+        <span>✍️ Maya Chen, Editor</span>
+      </div>
+      <h2>Our story</h2>
+      <p>Almond Ember Kitchen began as a private notebook — a place to record the small discoveries that make cooking feel magical. The way a pinch of sugar transforms a tomato sauce. The exact moment butter turns nutty and brown. The ratio of salt to flour that makes bread sing.</p>
+      <p>In 2019, that notebook became this site. Today, it is a library of recipes that have been tested at least three times in a home kitchen, with every step, mistake, and breakthrough documented. We believe that good cooking is not about perfection — it is about paying attention.</p>
+      <p>Whether you are a seasoned home cook or just learning to hold a knife, we hope you find something here that makes you want to tie on an apron and stay a while.</p>
+
+      <div class="quote-block">
+        <p>“The best recipes are the ones you make again and again, until they become part of your muscle memory — and your family's story.”</p>
+        <cite>— Maya Chen, Founder & Editor</cite>
+      </div>
+
+      <h2>What we believe</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <h4>Test, test, test</h4>
+          <p>Every recipe is cooked multiple times before it's published. No exceptions.</p>
+        </div>
+        <div class="value-item">
+          <h4>Flavor first</h4>
+          <p>We chase depth, balance, and boldness — not just good looks on a plate.</p>
+        </div>
+        <div class="value-item">
+          <h4>Technique matters</h4>
+          <p>Knowing <em>why</em> makes you a better cook. We explain the how and the why.</p>
+        </div>
+        <div class="value-item">
+          <h4>Slow is a virtue</h4>
+          <p>Some dishes take time. That's not a flaw — it's the point.</p>
+        </div>
+      </div>
+
+      <h2>Meet the kitchen</h2>
+      <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=450&fit=crop" alt="Maya Chen working in a home kitchen, surrounded by fresh ingredients">
+      <p><strong>Maya Chen</strong> is a recipe developer, former line cook, and the voice behind Almond Ember Kitchen. She has spent over a decade in professional and home kitchens, and her work has appeared in several food publications. She lives in Portland with her husband, two children, and a sourdough starter named Doughlores.</p>
+      <p>When she's not testing recipes, she can be found at the farmers market, reading old cookbooks, or perfecting her pizza dough.</p>
+
+      <h2>How we test</h2>
+      <ol>
+        <li><strong>First pass:</strong> We cook the recipe as written, following it exactly, taking notes on timing, texture, and flavor.</li>
+        <li><strong>Second pass:</strong> We adjust — more salt, less sugar, a different pan, a longer rest — and test again.</li>
+        <li><strong>Third pass:</strong> We ask a friend or family member to cook it from the written recipe without help. If they succeed, it's ready.</li>
+      </ol>
+      <p>Only then does a recipe earn its place on the site. It's a slow process, but we believe it's the only way to build trust with our readers.</p>
+
+      <h2>Behind the name</h2>
+      <p>The “almond” is for the humble, versatile nut that appears in both sweet and savory cooking. The “ember” is for the fire — the heat, the transformation, the glow of a well-tended kitchen. Together, they represent what we do: coax flavor out of simple ingredients with patience and a little bit of heat.</p>
+
+      <p style="margin-top:28px;"><strong>Get in touch:</strong> <a href="mailto:hello@almondemberkitchen.com">hello@almondemberkitchen.com</a> or visit our <a href="contact.html">contact page</a>.</p>
+    </article>
+
+    <!-- Newsletter (same as homepage) -->
+    <div class="newsletter fade-in" id="newsletter">
+      <h3>The Sunday Ember</h3>
+      <p>One email a week. Our best recipe, a technique tip, and something to cook this weekend.</p>
+      <form id="newsletterForm" onsubmit="event.preventDefault(); alert('Thanks for subscribing! (Demo)');">
+        <input type="email" placeholder="Your email address" required aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </main>
+
+  <!-- ===== SIDEBAR (same as homepage) ===== -->
+  <aside class="sidebar">
+
+    <!-- About Widget -->
+    <div class="sidebar-widget sidebar-about">
+      <h3>About the Kitchen</h3>
+      <p>Almond Ember Kitchen is written by <strong>Maya Chen</strong>, a recipe developer and former line cook. Every recipe is tested at least three times in a home kitchen before it's published.</p>
+      <p style="margin-top:12px; font-size:0.85rem;">📍 Portland, Oregon<br>✉️ hello@almondemberkitchen.com</p>
+    </div>
+
+    <!-- Popular Widget -->
+    <div class="sidebar-widget">
+      <h3>Most Popular</h3>
+      <ul id="sidebarPopular">
+        <!-- Filled by JS -->
+      </ul>
+    </div>
+
+    <!-- Recent Widget -->
+    <div class="sidebar-widget">
+      <h3>Recent Posts</h3>
+      <ul id="sidebarRecent">
+        <!-- Filled by JS -->
+      </ul>
+    </div>
+
+    <!-- Categories Widget -->
+    <div class="sidebar-widget">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="index.html#breakfast">Breakfast (12)</a></li>
+        <li><a href="index.html#dinner">Dinner (18)</a></li>
+        <li><a href="index.html#baking">Baking (15)</a></li>
+        <li><a href="index.html#vegetarian">Vegetarian (10)</a></li>
+        <li><a href="index.html#techniques">Techniques (8)</a></li>
+        <li><a href="index.html#desserts">Desserts (9)</a></li>
+      </ul>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="blog-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Almond Ember Kitchen</h4>
+        <p>Slow food, bold flavors, and the recipes worth repeating. A journal of deeply tested dishes, technique guides, and kitchen wisdom.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#breakfast">Breakfast</a></li>
+          <li><a href="index.html#dinner">Dinner</a></li>
+          <li><a href="index.html#baking">Baking</a></li>
+          <li><a href="index.html#techniques">Techniques</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="cookies.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Pinterest</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Almond Ember Kitchen. All rights reserved.</span>
+      <span>Made with fire and patience.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= SCHEMA MARKUP ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Almond Ember Kitchen",
+  "url": "https://www.almondemberkitchen.com/about.html",
+  "description": "Learn about Almond Ember Kitchen — a recipe journal by Maya Chen, dedicated to slow food, bold flavors, and deeply tested recipes.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Almond Ember Kitchen",
+    "founder": {
+      "@type": "Person",
+      "name": "Maya Chen"
+    }
+  }
+}
+</script>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+  // ---- DATA (same as homepage, used for sidebar) ----
+  const articles = [
+    {
+      id: 1,
+      title: "The Art of Slow-Braised Short Ribs: A Complete Guide",
+      categoryLabel: "Dinner",
+      readTime: "12 min read",
+      date: "March 12, 2025"
+    },
+    {
+      id: 2,
+      title: "Mastering Sourdough: A Patient Baker's Handbook",
+      categoryLabel: "Baking",
+      readTime: "9 min read",
+      date: "March 8, 2025"
+    },
+    {
+      id: 3,
+      title: "Umami for Vegetarians: Building Deep Flavor Without Meat",
+      categoryLabel: "Vegetarian",
+      readTime: "7 min read",
+      date: "March 3, 2025"
+    },
+    {
+      id: 4,
+      title: "Weeknight Miso Butter Pasta with Spring Vegetables",
+      categoryLabel: "Dinner",
+      readTime: "6 min read",
+      date: "Feb 28, 2025"
+    },
+    {
+      id: 5,
+      title: "The Perfect Fluffy Buttermilk Pancakes",
+      categoryLabel: "Breakfast",
+      readTime: "8 min read",
+      date: "Feb 24, 2025"
+    },
+    {
+      id: 6,
+      title: "How to Make Brown Butter (and Why You Should)",
+      categoryLabel: "Techniques",
+      readTime: "5 min read",
+      date: "Feb 20, 2025"
+    },
+    {
+      id: 7,
+      title: "Dark Chocolate Olive Oil Cake",
+      categoryLabel: "Desserts",
+      readTime: "7 min read",
+      date: "Feb 15, 2025"
+    },
+    {
+      id: 8,
+      title: "Crispy Smashed Potatoes with Garlic Aioli",
+      categoryLabel: "Vegetarian",
+      readTime: "6 min read",
+      date: "Feb 11, 2025"
+    },
+    {
+      id: 9,
+      title: "The Only Vinaigrette Formula You Need",
+      categoryLabel: "Techniques",
+      readTime: "5 min read",
+      date: "Feb 6, 2025"
+    },
+    {
+      id: 10,
+      title: "Lemon Blueberry Scones with Crème Fraîche",
+      categoryLabel: "Baking",
+      readTime: "8 min read",
+      date: "Feb 2, 2025"
+    }
+  ];
+
+  // ---- SIDEBAR RENDER ----
+  function renderSidebar() {
+    const popularUl = document.getElementById('sidebarPopular');
+    const recentUl = document.getElementById('sidebarRecent');
+    // Popular: first 5
+    popularUl.innerHTML = articles.slice(0, 5).map(a => `
+      <li>
+        <a href="index.html#article1">${a.title}</a>
+        <div class="side-meta">${a.categoryLabel} · ${a.readTime}</div>
+      </li>
+    `).join('');
+    // Recent: last 5, reversed
+    recentUl.innerHTML = articles.slice(-5).reverse().map(a => `
+      <li>
+        <a href="index.html#article1">${a.title}</a>
+        <div class="side-meta">${a.date}</div>
+      </li>
+    `).join('');
+  }
+
+  // ---- SEARCH (simple highlight, same as homepage) ----
+  function performSearch() {
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    if (!query) return;
+    document.querySelectorAll('.search-highlight').forEach(el => {
+      const parent = el.parentNode;
+      parent.replaceChild(document.createTextNode(el.textContent), el);
+      parent.normalize();
+    });
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: function(node) {
+          if (node.parentNode.tagName === 'SCRIPT' || node.parentNode.tagName === 'STYLE') return NodeFilter.FILTER_REJECT;
+          if (node.textContent.toLowerCase().includes(query)) return NodeFilter.FILTER_ACCEPT;
+          return NodeFilter.FILTER_REJECT;
+        }
+      }
+    );
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    let found = false;
+    nodes.forEach(node => {
+      const text = node.textContent;
+      const lower = text.toLowerCase();
+      const index = lower.indexOf(query);
+      if (index === -1) return;
+      found = true;
+      const span = document.createElement('span');
+      span.className = 'search-highlight';
+      span.textContent = text.substring(index, index + query.length);
+      const after = node.splitText(index);
+      after.textContent = after.textContent.substring(query.length);
+      node.parentNode.insertBefore(span, after);
+    });
+    if (!found) {
+      alert('No matches found for "' + query + '".');
+    } else {
+      const first = document.querySelector('.search-highlight');
+      if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  document.getElementById('searchBtn').addEventListener('click', performSearch);
+  document.getElementById('searchInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') performSearch();
+  });
+
+  // ---- MOBILE NAV ----
+  document.getElementById('mobileToggle').addEventListener('click', () => {
+    document.getElementById('mainNav').classList.toggle('open');
+  });
+
+  // ---- FADE-IN OBSERVER ----
+  function observeFadeIns() {
+    const els = document.querySelectorAll('.fade-in:not(.visible)');
+    if (!els.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
+  }
+
+  // ---- INIT ----
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar();
+    observeFadeIns();
+  });
+</script>
+
+</body>
+</html>
